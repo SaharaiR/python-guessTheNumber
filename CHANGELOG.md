@@ -14,6 +14,7 @@
 # Leer documentación de pruebas unitarias para python (mocks)
 # Cambié el código para usar funciones y facilitar el testing y abarcar mas objetivos de aprendizaje
 # Se logró hacer el primer test del numero aleatorio
+# Se hicieron funciones puras para poder hacer testing más fácil
 
 ### Added
 

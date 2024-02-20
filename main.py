@@ -27,6 +27,7 @@ def guessNumber():
         print(toGuess)
         
         findItUser = resolveNumber(toGuess, guessingUser)
+        printResolve(findItUser)
         if findItUser == True:
             print("Haz adivinado el número")
             break
@@ -35,6 +36,7 @@ def guessNumber():
         print("--Mi turno:--")
         print(guessingPC)
         findItPC = resolveNumber(toGuess, guessingPC)
+        printResolve(findItPC)
         if findItPC == True:
             print("He adivinado el número")
             break
@@ -49,13 +51,17 @@ def generateNumber():
 
 def resolveNumber(toGuessNumber, guessingNumber):
     if(guessingNumber > toGuessNumber):
-        print("El número fue muy alto")
-        #return "high"
+        return "high"
     elif(guessingNumber < toGuessNumber):
-        print("El número fue muy bajo")
-        #return "low"
+        return "low"
     elif(guessingNumber == toGuessNumber):
         return True
+
+def printResolve(resolve):
+    if(resolve == "high"):
+        print("El número es muy alto")
+    elif(resolve == "low"):
+        print("El número es muy bajo")
         
 if __name__ == "__main__":
     guessNumber()

@@ -1,4 +1,5 @@
 import random
+import sys
 #from random import randint
 #Para hacer testing tenemos que tener funciones o métodos [def]
 """
@@ -53,9 +54,10 @@ def guessNumber():
         print("No haz adivinado el número, intenta de nuevo ", end=" ")
         guessingUser = int(input(': '))
         attempsUser.append(guessingUser)
+    newGame()
                 
 def generateNumber():
-    return random.randint(1,100)
+    return random.randint(1,5)
 
 def resolveNumber(toGuessNumber, guessingNumber):
     if(guessingNumber > toGuessNumber):
@@ -70,7 +72,16 @@ def printResolve(resolve):
         print("El número es muy alto")
     elif(resolve == "low"):
         print("El número es muy bajo")
-        
+
+def newGame():
+    print("¿Quieres jugar de nuevo? (SI/NO) ", end=" ")
+    answer = input(': ').lower()
+    if answer == "si":
+        guessNumber()
+    elif answer == "no":
+        print("Gracias por jugar")
+        sys.exit()
+
 if __name__ == "__main__":
     guessNumber()
 

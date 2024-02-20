@@ -57,7 +57,7 @@ def guessNumber():
     newGame()
                 
 def generateNumber():
-    return random.randint(1,5)
+    return random.randint(1,100)
 
 def resolveNumber(toGuessNumber, guessingNumber):
     if(guessingNumber > toGuessNumber):

@@ -15,7 +15,10 @@ def guessNumber():
     print("Por favor escribe cualquier número entre 1 y 100: ")
     #En python el tipado es dinámico, según el valor asignado es el tipo de dato de la variable
     #convertir a entero, ya que el valor inicial lo guarda como cadena
+    attempsUser = []
+    attempsPC = []
     guessingUser = int(input('--> '))
+    attempsUser.append(guessingUser)
     #print(guessing)
     #toGuess = random.randint(1,100)
     toGuess = generateNumber()
@@ -24,38 +27,49 @@ def guessNumber():
     #while guessingUser != toGuess:
     #Cambie a un bucle infinito hasta que encuentre los break
     while True:
-        print(toGuess)
-        
+        #print(toGuess)
         findItUser = resolveNumber(toGuess, guessingUser)
+        printResolve(findItUser)
         if findItUser == True:
-            print("Haz adivinado el número")
+            print("¡Haz adivinado el número!")
+            print("Tus intentos fueron: ", end=" ")
+            print(attempsUser)
             break
         guessingPC = generateNumber()
+        attempsPC.append(guessingPC)
         print(" ")
-        print("--Mi turno:--")
+        print("--MI TURNO: ", end=" ")
         print(guessingPC)
         findItPC = resolveNumber(toGuess, guessingPC)
+        printResolve(findItPC)
         if findItPC == True:
             print("He adivinado el número")
+            print("Mis intentos fueron: ", end=" ")
+            print(attempsPC)
             break
         #Si no adivinó el ordenador le toca al usuario
         print(" ")
-        print("--Tu turno--")
-        print("No haz adivinado el número, intenta de nuevo: ")
-        guessingUser = int(input('--> '))
+        print("--TU TURNO--")
+        print("No haz adivinado el número, intenta de nuevo ", end=" ")
+        guessingUser = int(input(': '))
+        attempsUser.append(guessingUser)
                 
 def generateNumber():
     return random.randint(1,100)
 
 def resolveNumber(toGuessNumber, guessingNumber):
     if(guessingNumber > toGuessNumber):
-        print("El número fue muy alto")
-        #return "high"
+        return "high"
     elif(guessingNumber < toGuessNumber):
-        print("El número fue muy bajo")
-        #return "low"
+        return "low"
     elif(guessingNumber == toGuessNumber):
         return True
+
+def printResolve(resolve):
+    if(resolve == "high"):
+        print("El número es muy alto")
+    elif(resolve == "low"):
+        print("El número es muy bajo")
         
 if __name__ == "__main__":
     guessNumber()

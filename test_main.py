@@ -1,5 +1,5 @@
 import unittest
-from main import generateNumber,resolveNumber #importamos del modulo la clase que queremos testear
+from main import generateNumber,resolveNumber, validateInput #importamos del modulo la clase que queremos testear
 
 #Por convencion los nombres de las clases en python deben de ir con mayúsculas
 """
@@ -29,6 +29,14 @@ class TestMain(unittest.TestCase):
     def test_equalNumber(self):
         resolve = resolveNumber(12,12)
         self.assertEqual(resolve, True)
+    
+    def test_notNumber(self):
+        validate = validateInput("d")
+        self.assertEqual(validate, False)
+    
+    def test_emptyString(self):
+        validate = validateInput(" ")
+        self.assertEqual(validate, False)
     
     #pass #palabra reservada para indicar que aquí va código que aún no se hace pero para que no marque error
 

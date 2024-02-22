@@ -7,9 +7,10 @@ Entonces las funciones:
     1. Función principal (guessNumber)
     2. Generar numero aleatorio (generateNumber)
     3. Comparar el número y resolver si es menor, mayor o igual (resolveNumber)
-    4. Empezar nuevo juego (newGame)
-    Las tres se van a llamar dentro del bucle en determinado momento
-
+    4. Imprimir en consola dependiento de la resolucion del numero
+    5. Empezar nuevo juego (newGame)
+    6. Validar las entradas el usuario: si no es un numero o si la cadena esta vacia y si
+        no hay nombre de entrada usar "Desconocido"
 """
 
 def guessNumber():
@@ -30,7 +31,7 @@ def guessNumber():
         validate = validateInput(guessingUser)
     #convertir a entero, ya que el valor inicial lo guarda como cadena
     guessingUser = int(guessingUser)
-    #se declararn las listas para ir guardando los intentos
+    #se declaran las listas para ir guardando los intentos
     attempsUser = []
     attempsPC = []
     attempsUser.append(guessingUser)
@@ -93,7 +94,7 @@ def newGame():
         sys.exit()
 
 def validateInput(numberToValidate):
-    #si no es un numero entero
+    #si no es un numero entero o la cadena está vacia
     if not numberToValidate.isdigit() or not numberToValidate.strip():
         return False
     else:

@@ -15,6 +15,9 @@
 # Cambié el código para usar funciones y facilitar el testing y abarcar mas objetivos de aprendizaje
 # Se logró hacer el primer test del numero aleatorio
 # Se hicieron funciones puras para poder hacer testing más fácil
+# Se hicieron pruebas unitarias de las funciones
+# Se agregaron los registros de los intentos de los jugadores
+# Se agrego si se quiere jugar de nuevo
 
 ### Added
 
@@ -26,6 +29,7 @@
 ### Changed
 
 # Archivo changelog
+# Main.py y test_main.py
 
 ### Fixed
 

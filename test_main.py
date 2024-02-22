@@ -1,7 +1,5 @@
 import unittest
 from main import generateNumber,resolveNumber #importamos del modulo la clase que queremos testear
-from unittest.mock import patch
-from io import StringIO
 
 #Por convencion los nombres de las clases en python deben de ir con mayúsculas
 """
